@@ -1,0 +1,94 @@
+{% extends "upper_menu.html" %}
+{% block head %}
+    {% load static from staticfiles %}
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden; /* Disables scroll */
+        }
+
+        .divFormContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .divLoginSignup {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 400px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .divLoginSignup form {
+            position: relative;
+        }
+
+        .divLoginSignup input[type="text"],
+        .divLoginSignup input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #fff; /* White border for input fields */
+            border-radius: 5px;
+            background: transparent;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .divLoginSignup input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff; /* White background for submit button */
+            color: #333; /* Black text for contrast */
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .divLoginSignup input[type="submit"]:hover {
+            background-color: #e1e1e1; /* Lighter grey on hover */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .divLoginSignup {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .divLoginSignup {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    {{ message }}
+    <div class="divFormContainer">
+        <div class="divLoginSignup">
+            <form action="login_handle" method="post">
+                {% csrf_token %}
+                <input type="text" placeholder="Email Address" name="email">
+                <input type="password" placeholder="Password" name="password">
+                <input type="submit" value="Log in">
+            </form>
+        </div>
+    </div>
+{% endblock %}

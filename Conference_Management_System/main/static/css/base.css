@@ -1,0 +1,16 @@
+/* This CSS file will contain styles that are applied throughout the entire app */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #333; /* Dark background for a black and white theme */
+    color: #fff;
+}
+
+/* Black and white gradient for full page background */
+body {
+    background: linear-gradient(to bottom, #ffffff 0%, #000000 100%);
+    background-attachment: fixed; /* Make the background fixed so it doesn't scroll with the content */
+}
+
+/* Add other global styles here */

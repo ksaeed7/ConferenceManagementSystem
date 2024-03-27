@@ -1,0 +1,31 @@
+/* Importing a Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+#divMenuContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 60%;
+    margin: 0 auto; /* Centers the container */
+    font-family: 'Open+Sans', sans-serif; /* This is the imported font */
+}
+
+#divMenuContainer > a {
+    padding: 15px 20px; /* Providing more horizontal padding */
+    font-size: 16px; /* Slightly smaller font-size for a more professional look */
+    background: #800000; /* A more professional shade of maroon */
+    color: #fff;
+    border-radius: 5px; /* Less rounded corners for a sharper look */
+    margin: 1%;
+    text-align: center;
+    text-decoration: none; /* Removes underline from links */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+#divMenuContainer > a:hover {
+    background: #993333; /* A lighter maroon for hover */
+    color: #fff;
+    text-decoration: none; /* Ensure text-decoration is none on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly deeper shadow on hover */
+}

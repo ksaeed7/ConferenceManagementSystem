@@ -1,0 +1,106 @@
+{% extends "upper_menu.html" %}
+
+{% block head %}
+<style>
+    /* Add your existing styles from 'upper_menu.html' */
+
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f8f8;
+        overflow: hidden; /* Disables scroll */
+    }
+
+    .bg-image {
+        background-image: url('CONFERENCE_IMAGE_URL'); /* Replace with your image URL */
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        opacity: 0.7; /* Lower the opacity to ensure text readability */
+    }
+
+    .content {
+        position: relative;
+        color: #000;
+        padding-top: 100px;
+        z-index: 1;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        min-height: 100vh;
+        padding-bottom: 50px;
+    }
+
+    .card {
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        width: 300px; /* Fixed width */
+        height: 200px; /* Fixed height */
+        margin: 20px;
+        padding: 30px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Distribute space inside the card */
+        opacity: 0;
+        transform: translateY(20px);
+        animation: floatUp 1.5s forwards;
+        animation-delay: calc(0.5s * var(--animation-order));
+    }
+
+    .card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    .card h2 {
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        color: #666;
+        text-align: justify;
+    }
+
+    @keyframes floatUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="bg-image"></div>
+<div class="content">
+    <!-- Cards for each feature -->
+    <div class="card" style="--animation-order:0;">
+        <h2>Paper Submission</h2>
+        <p>Authors are encouraged to submit their papers by the set deadline to be considered for the conference proceedings.</p>
+    </div>
+    <div class="card" style="--animation-order:1;">
+        <h2>Peer Review</h2>
+        <p>Each paper is assigned to three reviewers for detailed feedback, ensuring a comprehensive evaluation process.</p>
+    </div>
+    <div class="card" style="--animation-order:2;">
+        <h2>Review Analysis</h2>
+        <p>Reviewer recommendations are crucial for the Program Chair to make informed decisions regarding each submission.</p>
+    </div>
+    <div class="card" style="--animation-order:3;">
+        <h2>Final Decision</h2>
+        <p>The Conference Program Chair makes the final call on publications after a thorough analysis of the peer reviews.</p>
+    </div>
+</div>
+{% endblock %}
