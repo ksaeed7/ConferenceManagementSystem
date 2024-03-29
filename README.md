@@ -22,7 +22,7 @@ Before you begin, make sure you have met the following requirements:
 Follow these steps to install the Conference Management System:
 
 1. Clone the repository:
-   - `git clone https://yourrepositorylinkhere.com`
+   - `git clone https://github.com/ksaeed7/ConferenceManagementSystem`
 
 2. Navigate to the project directory:
    - `cd conference_management_system`
